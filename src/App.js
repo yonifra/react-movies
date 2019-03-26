@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Movie from "./Movie/Movie";
 
 class App extends Component {
   render() {
@@ -8,7 +9,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>This is my react application</p>
+          <p>Movie Scraper</p>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -16,6 +17,7 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
+            <Movie />
           </a>
         </header>
       </div>
