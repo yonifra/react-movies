@@ -12,7 +12,6 @@ class Movie extends Component {
 
   render() {
     return (
-      // jsx
       <div>
         <p>{this.state.title}</p>
       </div>
