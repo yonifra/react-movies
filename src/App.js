@@ -17,7 +17,10 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
-            <Movie />
+            <Movie
+              name="Forrest Gump"
+              description="Just the movie description"
+            />
           </a>
         </header>
       </div>
