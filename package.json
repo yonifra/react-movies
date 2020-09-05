@@ -1,11 +1,11 @@
 {
   "name": "react-movies",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "jest": "^24.7.1",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
+    "jest": "^24.9.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-scripts": "2.1.8"
   },
   "scripts": {
