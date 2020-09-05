@@ -1,8 +1,6 @@
 import React from "react";
 
-export default function MovieCard(props) {
-    const movie = props.data
-
+export default function MovieCard({movie}) {
     return (<div className='card' key={movie.id}>
         <img className='card--image' src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} alt={`movie poster for ${movie.title}`} />
         <div className='card--content'>
