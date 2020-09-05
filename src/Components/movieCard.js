@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function MovieCard({movie}) {
-    return (<div className='card' key={movie.id}>
+export default function MovieCard({movie, key}) {
+    return (<div className='card' key={key}>
         <img className='card--image' src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} alt={`movie poster for ${movie.title}`} />
         <div className='card--content'>
             <h3 className='card--title'>{movie.title}</h3>
