@@ -1,6 +1,5 @@
 import React from 'react'
 import { Card } from 'semantic-ui-react'
-import MovieCard from './movieCard'
 
 const CardsContainer = (props) => (
   <Card.Group itemsPerRow={6} className="ui six cards">

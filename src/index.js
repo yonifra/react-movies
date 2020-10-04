@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SearchMovies from './Components/searchMovies'
 
 // eslint-disable-next-line
 import styles from './index.css';

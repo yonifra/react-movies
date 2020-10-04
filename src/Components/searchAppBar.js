@@ -71,64 +71,62 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SearchAppBar() {
   const classes = useStyles();
-  const [query, setQuery] = useState('');
-const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
-const searchMovies = async (e) => {
-    e.preventDefault(); // prevents refreshing
+  const searchMovies = async (e) => {
+      e.preventDefault(); // prevents refreshing
 
-    setQuery(document.getElementById('searchField').value)
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=5dcf7f28a88be0edc01bbbde06f024ab&language=en-US&query=${document.getElementById('searchField').value}&page=1&include_adult=false`;
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=5dcf7f28a88be0edc01bbbde06f024ab&language=en-US&query=${document.getElementById('searchField').value}&page=1&include_adult=false`;
 
-    try {
-      console.log(url);
-        const res = await fetch(url);
-        const data = await res.json()
-        await setMovies(data.results)
-    } catch (error) {
-        console.error(error)
-    }
-}
+      try {
+        console.log(url);
+          const res = await fetch(url);
+          const data = await res.json()
+          await setMovies(data.results)
+      } catch (error) {
+          console.error(error)
+      }
+  }
 
   return (
     <>
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            React Movie Search
-          </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="open drawer"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography className={classes.title} variant="h6" noWrap>
+              React Movie Search
+            </Typography>
+            <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+              <form onSubmit={searchMovies} className={classes.form}>
+                <InputBase
+                  placeholder="Movie name"
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                  }}
+                  id="searchField"
+                  inputProps={{ 'aria-label': 'search' }}
+                />
+              </form>
             </div>
-            <form onSubmit={searchMovies} className={classes.form}>
-              <InputBase
-                placeholder="Movie name"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                id="searchField"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </form>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+          </Toolbar>
+        </AppBar>
+      </div>
 
-    <div className="container">
-    <CardsContainer movies={movies} />
-    </div>
+      <div className="container">
+        <CardsContainer movies={movies} />
+      </div>
     </>
   );
 }
