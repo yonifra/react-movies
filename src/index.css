@@ -34,7 +34,7 @@ small {
 }
 
 .form {
-  display: grid;
+  display: flex;
 }
 
 .label {
@@ -45,6 +45,7 @@ small {
 
 .input {
   font-size: 1.6rem;
+  flex: 1;
   padding: 0.5rem 2rem;
   line-height: 2.8rem;
   border-radius: 20px;
@@ -60,6 +61,7 @@ small {
   border-radius: 20px;
   font-size: 1.4rem;
   cursor: pointer;
+  width: 120px;
   transition: background-color 250ms;
 }
 

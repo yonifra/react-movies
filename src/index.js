@@ -4,6 +4,7 @@ import SearchMovies from './Components/searchMovies'
 
 // eslint-disable-next-line
 import styles from './index.css';
+import 'semantic-ui-css/semantic.min.css'
 
 class Main extends React.Component {
   render() {
