@@ -7,7 +7,6 @@ const CardsContainer = (props) => (
     {props.movies
         .filter(movie => movie.poster_path)
         .map(movie => (
-            // <MovieCard movie={movie} key={movie.id} />
             <Card raised image={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} key={movie.id} />
     ))}
   </Card.Group>

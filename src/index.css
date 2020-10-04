@@ -22,6 +22,10 @@ small {
     font-size: 1.2rem;
 }
 
+.appBarContainer {
+  margin: 0 auto;
+}
+
 .container {
     margin: 0 auto;
     max-width:1000px;
@@ -35,6 +39,7 @@ small {
 
 .form {
   display: flex;
+  margin-top: 20px;
 }
 
 .label {

@@ -5,13 +5,13 @@ import SearchMovies from './Components/searchMovies'
 // eslint-disable-next-line
 import styles from './index.css';
 import 'semantic-ui-css/semantic.min.css'
+import SearchAppBar from './Components/searchAppBar'
 
 class Main extends React.Component {
   render() {
     return (
-      <div className="container">
-            <h1 className="title">React Movie Search</h1>
-            <SearchMovies />
+      <div className="appBarContainer">
+        <SearchAppBar/>
       </div>
     );
   }
