@@ -50,7 +50,7 @@ export default function MovieDetails({key}) {
                     <h5>Revenue: {formatMoney(movie.revenue)}</h5>
                     <h5>Runtime: {formatTime(movie.runtime)}</h5>
                     <div>{movie.production_companies.map(company => <img src={`https://image.tmdb.org/t/p/h60${company.logo_path}`}  width='40px' alt={company.name} key={company.name}/>)}</div>
-                    <a href={`https://www.imdb.com/title/${movie.imdb_id}`} target="_blank"><img src={imdbLogo} alt='imdb' width='40px'/></a>
+                    <a href={`https://www.imdb.com/title/${movie.imdb_id}`} target="_blank" rel="noopener noreferrer"><img src={imdbLogo} alt='imdb' width='40px'/></a>
                 </div>
             </div>
             <div>{movie.overview}</div>

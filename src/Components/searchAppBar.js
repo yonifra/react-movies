@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SearchAppBar() {
   const classes = useStyles();
   const [movies, setMovies] = useState([]);
-  const [movie, setMovie] = useState({});
+  const [movie, ] = useState({});
 
   const searchMovies = async (e) => {
       e.preventDefault(); // prevents refreshing
