@@ -8,6 +8,8 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import CardsContainer from './cardsContainer';
+import {Route, Switch} from 'react-router-dom';
+import MovieDetails from './movieDetails'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -72,6 +74,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SearchAppBar() {
   const classes = useStyles();
   const [movies, setMovies] = useState([]);
+  const [movie, setMovie] = useState({});
 
   const searchMovies = async (e) => {
       e.preventDefault(); // prevents refreshing
@@ -79,7 +82,6 @@ export default function SearchAppBar() {
       const url = `https://api.themoviedb.org/3/search/movie?api_key=5dcf7f28a88be0edc01bbbde06f024ab&language=en-US&query=${document.getElementById('searchField').value}&page=1&include_adult=false`;
 
       try {
-        console.log(url);
           const res = await fetch(url);
           const data = await res.json()
           await setMovies(data.results)
@@ -125,8 +127,13 @@ export default function SearchAppBar() {
       </div>
 
       <div className="container">
-        <CardsContainer movies={movies} />
+        <Switch>
+          <Route component={() => <MovieDetails movie={movie}/>} path="/movie"  />
+          <Route component={() => <CardsContainer movies={movies} />} path="/" />
+        </Switch>
       </div>
-    </>
-  );
+      </>
+      );
 }
+
+      // <!-- <CardsContainer movies={movies} /> -->
