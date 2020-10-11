@@ -29,16 +29,14 @@ export default function MovieDetails({key}) {
     }
 
     const movieId = localStorage.getItem('movieId')
-    console.log('got movie', movieId)
     const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=5dcf7f28a88be0edc01bbbde06f024ab&language=en-US`
 
     getMovieData(apiUrl)
-    console.log(movie)
 
     if (!movie) {
         return <div />
     }
-    console.log('movie', movie)
+
     return (
         <div className='flex-container'>
             <div className='flex-container-row'>

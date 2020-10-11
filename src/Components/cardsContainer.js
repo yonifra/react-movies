@@ -14,7 +14,6 @@ const CardsContainer = (props) => {
               alt={movie.original_title}
               header={movie.original_title}
               onClick={(e,data) => {
-                  console.log('setting movie', movie)
                   localStorage.setItem('movieId', movie.id)
                   history.push('/movie')
                 }} />
